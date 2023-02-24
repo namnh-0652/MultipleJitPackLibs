@@ -4,7 +4,7 @@ plugins {
     id 'maven-publish'
 }
 apply from: '../version.gradle'
-group = libGroupId
+group = findProperty('groupId')
 
 android {
     namespace 'com.namnh.libtest.core'
@@ -13,8 +13,8 @@ android {
     defaultConfig {
         minSdk 23
         targetSdk 33
-        versionName coreVersionName
-        versionCode coreVersionCode
+        versionName = findProperty('versionName')
+        versionCode = findProperty('versionCode')
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -45,15 +45,4 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                from components.release
-                groupId = libGroupId
-                artifactId = 'core'
-                version = coreVersionName
-            }
-        }
-    }
-}
+with jitpackPublisher

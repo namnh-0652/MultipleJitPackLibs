@@ -1,9 +1,14 @@
-ext {
-    coreVersionName = "1.0.2"
-    coreVersionCode = 1
-
-    attentionVersionName = "1.0.1"
-    attentionVersionCode = 1
-
-    libGroupId = 'com.github.namnh-0652.MultipleJitPackLibs'
+ext.jitpackPublisher = {
+    afterEvaluate {
+        publishing {
+            publications {
+                release(MavenPublication) {
+                    from components.release
+                    groupId = findProperty('groupId')
+                    artifactId = findProperty('artifactId')
+                    version = findProperty('versionName')
+                }
+            }
+        }
+    }
 }
