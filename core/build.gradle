@@ -4,7 +4,7 @@ plugins {
     id 'maven-publish'
 }
 apply from: '../version.gradle'
-group = project.ext.libGroupId
+group = libGroupId
 
 android {
     namespace 'com.namnh.libtest.core'
@@ -13,8 +13,8 @@ android {
     defaultConfig {
         minSdk 23
         targetSdk 33
-        versionName project.ext.versionName
-        versionCode project.ext.versionCode
+        versionName coreVersionName
+        versionCode coreVersionCode
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -50,9 +50,9 @@ afterEvaluate {
         publications {
             release(MavenPublication) {
                 from components.release
-                groupId = project.ext.libGroupId
+                groupId = libGroupId
                 artifactId = 'core'
-                version = project.ext.versionName
+                version = coreVersionName
             }
         }
     }

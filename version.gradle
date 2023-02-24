@@ -1,5 +1,9 @@
 ext {
-    versionName = "1.0.1"
-    versionCode = 1
+    coreVersionName = "1.0.2"
+    coreVersionCode = 1
+
+    attentionVersionName = "1.0.1"
+    attentionVersionCode = 1
+
     libGroupId = 'com.github.namnh-0652.MultipleJitPackLibs'
 }
