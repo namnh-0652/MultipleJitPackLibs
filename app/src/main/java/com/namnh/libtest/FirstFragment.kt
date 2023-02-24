@@ -1,11 +1,12 @@
 package com.namnh.libtest
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.namnh.libtest.core.longToast
 import com.namnh.libtest.databinding.FragmentFirstBinding
 
 /**
@@ -33,6 +34,7 @@ class FirstFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonFirst.setOnClickListener {
+            context?.longToast("navigate to second screen")
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
     }

@@ -36,8 +36,8 @@ android {
 }
 
 dependencies {
-    implementation project(':core')
-    implementation project(':attention')
+    implementation 'com.github.namnh-0652.MultipleJitPackLibs:core:1.0.1'
+    implementation 'com.github.namnh-0652.MultipleJitPackLibs:attention:1.0.1'
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'

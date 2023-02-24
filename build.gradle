@@ -1,11 +1,6 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext {
-        versionName = "1.0.0"
-        versionCode = 1
-        libGroupName = 'com.github.namnh-0652.MultipleJitPackLibs'
-    }
     dependencies {
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
     }

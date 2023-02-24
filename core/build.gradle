@@ -4,7 +4,7 @@ plugins {
     id 'maven-publish'
 }
 apply from: '../version.gradle'
-group=project.ext.libGroupId
+group = project.ext.libGroupId
 
 android {
     namespace 'com.namnh.libtest.core'
